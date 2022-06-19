@@ -8,12 +8,12 @@ import pro.sky.java.course2.calculator.service.CalculatorService;
 @RestController
 public class Controller {
 
-    //    private int result ;
-    private CalculatorService calculatorService = new CalculatorService();
-////
-//    public Controller (CalculatorService calculatorService){
-//        this.calculatorService = calculatorService;
-//    }
+    private final CalculatorService calculatorService;
+
+    public Controller (CalculatorService calculatorService) {
+        this.calculatorService = calculatorService ;
+    }
+
 
     @GetMapping("/plus")
     public String sum(@RequestParam int num1, @RequestParam int num2) {
@@ -37,19 +37,11 @@ public class Controller {
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam Integer num1, @RequestParam Integer num2) {
+    public String divide(@RequestParam int num1, @RequestParam int num2) {
 
             return calculatorService.divide(num1, num2);
         }
 
-//    @GetMapping("/minus")
-//    public int minus(@RequestParam int num1, @RequestParam int num2){
-//        return num1 - num2 ;
-//    }
 
-//    @GetMapping()
-//    public String hello(){
-//        return "Hello!" ;
-//    }
     }
 
