@@ -53,12 +53,20 @@ public class CalculatorController {
     @GetMapping("/divide")
     public String divide (@RequestParam (value = "num1", required = false) Integer a,
                        @RequestParam (value = "num2", required = false) Integer b) {
-        if (Objects.isNull(a) || Objects.isNull(b)){
-            return "Оба параметра должны быть переданы" ;
+        if (a == null) {
+            return "Ошибка! Введите первое число.";
+        } else if (b == null) {
+            return "Ошибка! Введите второе число.";
+        } else if (b == 0) {
+            return "Ошибка! На 0 делить нельзя!";
         }
-        if (b == 0) {
-            return "На ноль делить нельзя!" ;
-        }
+//
+//        if (Objects.isNull(a) || Objects.isNull(b)){
+//            return "Оба параметра должны быть переданы" ;
+//        }
+//        if (b == 0) {
+//            return "На ноль делить нельзя!" ;
+//        }
         return buildResult(a, b, calculatorService.divide(a, b), "/") ;
     }
 

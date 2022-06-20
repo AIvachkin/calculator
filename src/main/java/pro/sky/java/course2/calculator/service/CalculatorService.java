@@ -10,13 +10,13 @@ public class CalculatorService {
 //    должен отвечать только за вычисления, чтобы в случае изменения вывода
 //    сделать это только в контроллере
 
-    public int plus(Integer a, Integer b) {
+    public Number plus(Integer a, Integer b) {
         return a + b ;
     }
-    public int minus (Integer a, Integer b) {
+    public Number minus (Integer a, Integer b) {
         return a - b ;
     }
-    public int multiply (Integer a, Integer b) {
+    public Number multiply (Integer a, Integer b) {
         return a * b ;
     }
     public Number divide (Integer a, Integer b) {
