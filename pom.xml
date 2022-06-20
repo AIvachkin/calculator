@@ -11,6 +11,7 @@
     <groupId>pro.sky.java.course2</groupId>
     <artifactId>calculator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <name>calculator</name>
     <description>calculator</description>
     <properties>
